@@ -18,8 +18,14 @@ public class UserController {
     private UserService userService;
 
     @ResponseBody
-    @PostMapping("/add")
-    public int addUser(UserDomain user){
+    //@PostMapping("/add")
+    @GetMapping("/add")
+    public int addUser(){
+        UserDomain user = new UserDomain();
+        user.setUserId(1);
+        user.setUserName("yuanpu");
+        user.setPassword("20082990");
+        user.setPhone("1111");
         return userService.addUser(user);
     }
 
